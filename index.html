@@ -3,133 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flammable Filth | Filthy Seduction Productions</title>
+    <title>Flammable Filth | The VEX Entry Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gold: #d4af37;
-            --danger-red: #8b0000;
-            --dark-bg: #0a0a0a;
-            --text-light: #f4f4f4;
+            --gold: #d4af37;
+            --crimson: #a30000;
+            --black: #080808;
+            --glass: rgba(255, 255, 255, 0.05);
         }
 
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: #fff;
             overflow-x: hidden;
         }
 
-        /* Age Verification Overlay */
+        /* VEX Age Gate - High Psychological Barrier */
         #age-gate {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.98);
-            z-index: 1000;
+            background: linear-gradient(45deg, #000 0%, #1a0000 100%);
+            z-index: 10000;
             display: flex;
             justify-content: center;
             align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .gate-panel {
+            background: rgba(0,0,0,0.8);
+            border: 1px solid var(--gold);
+            padding: 60px;
             text-align: center;
-        }
-
-        .gate-content {
-            border: 2px solid var(--primary-gold);
-            padding: 40px;
             max-width: 500px;
-            background: #111;
+            box-shadow: 0 0 50px rgba(163, 0, 0, 0.5);
         }
 
-        /* Hero Section */
+        .gate-panel h1 { font-family: 'Cinzel', serif; color: var(--gold); letter-spacing: 4px; }
+
+        /* Hero / Branding */
         .hero {
-            height: 80vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080'); /* Replace with high-end brand image */
-            background-size: cover;
+            background: radial-gradient(circle at center, rgba(163, 0, 0, 0.2) 0%, transparent 70%);
             text-align: center;
         }
 
-        .btn {
-            padding: 15px 30px;
-            margin: 10px;
-            cursor: pointer;
-            border: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
+        .logo-img {
+            max-width: 600px;
+            width: 85%;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6));
+            margin-bottom: 2rem;
+            transition: transform 0.5s ease;
+        }
+        .logo-img:hover { transform: scale(1.02); }
+
+        /* Cross-Merchandising Grid */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
         }
 
-        .btn-enter { background: var(--primary-gold); color: black; }
-        .btn-exit { background: var(--danger-red); color: white; }
-        .btn-performer { border: 2px solid var(--primary-gold); color: var(--primary-gold); background: transparent; }
+        .brand-card {
+            background: var(--glass);
+            border: 1px solid #222;
+            padding: 30px;
+            transition: 0.3s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-        /* Marketing Sections */
-        .section { padding: 60px 20px; text-align: center; max-width: 1000px; margin: auto; }
-        .ad-space { background: #222; border: 1px dashed #444; margin: 20px 0; padding: 40px; color: #666; }
-        
-        footer { padding: 40px; background: #000; font-size: 0.8rem; border-top: 1px solid var(--primary-gold); }
+        .brand-card:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.05); }
+
+        /* Buttons & Interactions */
+        .btn {
+            padding: 20px 45px;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            transition: 0.4s;
+            cursor: pointer;
+            letter-spacing: 2px;
+            border: none;
+        }
+
+        .btn-gold { background: var(--gold); color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        .btn-gold:hover { background: #fff; box-shadow: 0 0 30px var(--gold); transform: translateY(-3px); }
+
+        .btn-outline { border: 1px solid var(--gold); color: var(--gold); background: transparent; }
+        .btn-outline:hover { background: var(--gold); color: #000; }
+
+        /* Pulse Animation for CTA */
+        .pulse { animation: pulse-red 2s infinite; }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* Performer Portal Section */
+        .portal-section {
+            background: #111;
+            padding: 80px 20px;
+            border-top: 1px solid #222;
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #555;
+            background: #000;
+        }
+
+        .minneapolis-tag { color: var(--crimson); font-weight: bold; letter-spacing: 1px; }
+
     </style>
 </head>
 <body>
 
     <div id="age-gate">
-        <div class="gate-content">
-            <h1 style="color: var(--danger-red);">WARNING: ADULT CONTENT</h1>
-            <p>You must be at least 21 years of age to enter Flammable Filth.</p>
-            <p>Are you 21 or older?</p>
-            <button class="btn btn-enter" onclick="enterSite()">YES - ENTER</button>
-            <button class="btn btn-exit" onclick="exitSite()">NO - EXIT</button>
+        <div class="gate-panel">
+            <h1>IDENTITY REQUIRED</h1>
+            <p>You are about to enter a high-intensity adult environment. This site uses cookies to enhance your experience within the Filthy Seduction network.</p>
+            <p><strong>Are you 21+ and ready to enter?</strong></p>
+            <div style="margin-top: 30px;">
+                <button class="btn btn-gold" onclick="grantAccess()">Enter Anyway</button>
+                <button class="btn btn-outline" onclick="denyAccess()">Exit</button>
+            </div>
         </div>
     </div>
 
     <header class="hero">
-        <img src="logo.png" alt="Flammable Filth" style="max-width: 300px; margin-bottom: 20px;">
-        <h2>The Gateway to Filthy Seduction</h2>
-        <div>
-            <a href="https://your-adult-server.com" class="btn btn-enter">Enter Main Site</a>
-            <a href="#performer-login" class="btn btn-performer">Performer Portal</a>
+        <img src="www.flammablefilth.com.png" alt="Flammable Filth Logo" class="logo-img">
+        <h2 style="font-weight: 300; color: #ccc;">The Premier Routing Port for <span class="minneapolis-tag">FILTHY SEDUCTION</span></h2>
+        
+        <div style="margin-top: 40px;">
+            <a href="https://your-adult-server.com" class="btn btn-gold pulse">Access X-Rated Server</a>
+            <a href="#portal" class="btn btn-outline">Performer Login</a>
         </div>
     </header>
 
-    <div class="section">
-        <h3>Scouted by Filthy Seduction Productions LLC</h3>
-        <p>From Minneapolis to Philly, we build brands for the most dedicated performers in the industry. Whether you are looking to break into the market or scale your existing brand, we provide the safest and fastest route to success.</p>
-        
-        <div class="ad-space">
-            [ Premium Advertisement Placement - Market Other Brands Here ]
+    <section class="section">
+        <h2 style="text-align: center; font-family: 'Cinzel';">The Seduction Network</h2>
+        <div class="promo-grid">
+            <div class="brand-card">
+                <h3 style="color: var(--gold);">Filthy Seduction Productions</h3>
+                <p>The elite scouting organization based in MN & PA. Building the next generation of industry icons.</p>
+                <a href="http://www.filthyseductionproductions.com" style="color: #fff; font-size: 0.8rem;">Visit Corporate</a>
+            </div>
+            <div class="brand-card">
+                <h3 style="color: var(--gold);">Premium Advertising</h3>
+                <p>Market your adult brand here. High-traffic routing for maximum exposure across our global audience.</p>
+            </div>
+            <div class="brand-card">
+                <h3 style="color: var(--gold);">Scouting & Growth</h3>
+                <p>Don't just play—perform. We provide the safest, fastest, and most profitable path into the industry.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <hr style="border: 0; border-top: 1px solid #333;">
-
-    <div id="performer-login" class="section">
-        <h2>Performer Entry</h2>
-        <p>Exclusive access for our scouted talent to upload and manage content.</p>
-        <form style="display: inline-block; text-align: left; background: #1a1a1a; padding: 20px; border-radius: 8px;">
-            <label>Performer ID</label><br>
-            <input type="text" style="width: 100%; margin: 10px 0; padding: 8px;"><br>
-            <label>Access Key</label><br>
-            <input type="password" style="width: 100%; margin: 10px 0; padding: 8px;"><br>
-            <button type="button" class="btn btn-enter" style="width: 100%;">Login to Dashboard</button>
-        </form>
-    </div>
+    <section id="portal" class="portal-section">
+        <div style="max-width: 500px; margin: auto; text-align: center;">
+            <h2 style="font-family: 'Cinzel'; color: var(--gold);">PERFORMER ENTRY</h2>
+            <p style="margin-bottom: 30px;">Exclusive Gateway for Scouted Talent Only</p>
+            <div style="background: #000; padding: 40px; border: 1px solid #333;">
+                <input type="text" placeholder="Performer ID" style="width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #444; color: #fff;">
+                <input type="password" placeholder="Access Key" style="width: 100%; padding: 15px; margin-bottom: 25px; background: #111; border: 1px solid #444; color: #fff;">
+                <button class="btn btn-gold" style="width: 100%; margin: 0;">Unlock Dashboard</button>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 Filthy Seduction Productions LLC. Minneapolis, MN | Philadelphia, PA.</p>
-        <p>Visit <a href="http://www.filthyseductionproductions.com" style="color: var(--primary-gold);">Filthy Seduction Productions</a> for scouting and corporate info.</p>
+        <p>&copy; 2026 Filthy Seduction Productions LLC. | Minneapolis, MN | Philadelphia, PA</p>
+        <p>This is a secure routing port. All data entry is protected under VEX-Safe protocols.</p>
     </footer>
 
     <script>
-        function enterSite() {
-            document.getElementById('age-gate').style.display = 'none';
+        function grantAccess() {
+            const gate = document.getElementById('age-gate');
+            gate.style.transition = 'opacity 0.8s ease';
+            gate.style.opacity = '0';
+            setTimeout(() => { gate.style.display = 'none'; }, 800);
         }
 
-        function exitSite() {
+        function denyAccess() {
             window.location.href = "https://apexvesto.com";
         }
     </script>
