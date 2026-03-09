@@ -3,138 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FSP | Filthy Seduction Productions - The Gold Standard</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+    <title>Flammable Filth | Filthy Seduction Productions</title>
+    <style>
+        :root {
+            --primary-gold: #d4af37;
+            --danger-red: #8b0000;
+            --dark-bg: #0a0a0a;
+            --text-light: #f4f4f4;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Age Verification Overlay */
+        #age-gate {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.98);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .gate-content {
+            border: 2px solid var(--primary-gold);
+            padding: 40px;
+            max-width: 500px;
+            background: #111;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080'); /* Replace with high-end brand image */
+            background-size: cover;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-enter { background: var(--primary-gold); color: black; }
+        .btn-exit { background: var(--danger-red); color: white; }
+        .btn-performer { border: 2px solid var(--primary-gold); color: var(--primary-gold); background: transparent; }
+
+        /* Marketing Sections */
+        .section { padding: 60px 20px; text-align: center; max-width: 1000px; margin: auto; }
+        .ad-space { background: #222; border: 1px dashed #444; margin: 20px 0; padding: 40px; color: #666; }
+        
+        footer { padding: 40px; background: #000; font-size: 0.8rem; border-top: 1px solid var(--primary-gold); }
+    </style>
 </head>
 <body>
 
-    <nav class="fsp-nav">
-        <div class="logo-box">
-            <img src="VEXILLIALSDP_FSP.png" alt="FSP Logo" class="live-logo">
+    <div id="age-gate">
+        <div class="gate-content">
+            <h1 style="color: var(--danger-red);">WARNING: ADULT CONTENT</h1>
+            <p>You must be at least 21 years of age to enter Flammable Filth.</p>
+            <p>Are you 21 or older?</p>
+            <button class="btn btn-enter" onclick="enterSite()">YES - ENTER</button>
+            <button class="btn btn-exit" onclick="exitSite()">NO - EXIT</button>
         </div>
-        <div class="nav-actions">
-            <span class="status-pulse"></span> RECRUITING ACTIVE
-            <a href="#login" class="nav-link">DASHBOARD</a>
-            <a href="#intake" class="btn-cta-nav">APPLY NOW</a>
-        </div>
-    </nav>
+    </div>
 
-    <header class="hero-vault">
-        <div class="video-overlay"></div>
-        <div class="hero-inner">
-            <h1 class="glitch-text">FSP <span class="fire-glow">DIRECTORATE</span></h1>
-            <p class="sub-hero">We don't just film. We architect icons. $100/hr Base Rate. 100% Secure. Zero Judgment.</p>
-            <div class="hero-btns">
-                <a href="#earnings" class="btn-outline">VIEW PAY SCALE</a>
-                <a href="#intake" class="btn-fire">START YOUR EVOLUTION</a>
-            </div>
+    <header class="hero">
+        <img src="logo.png" alt="Flammable Filth" style="max-width: 300px; margin-bottom: 20px;">
+        <h2>The Gateway to Filthy Seduction</h2>
+        <div>
+            <a href="https://your-adult-server.com" class="btn btn-enter">Enter Main Site</a>
+            <a href="#performer-login" class="btn btn-performer">Performer Portal</a>
         </div>
     </header>
 
-    <section id="earnings" class="pay-system">
-        <div class="container">
-            <h2 class="section-title">THE REVENUE ENGINE</h2>
-            <p class="center-text">Your time is elite. We pay accordingly.</p>
-            
-            <div class="pay-grid">
-                <div class="pay-card">
-                    <h3>PER MINUTE</h3>
-                    <p class="price">$1.66</p>
-                    <span>Micro-Cues</span>
-                </div>
-                <div class="pay-card featured">
-                    <h3>PER HOUR</h3>
-                    <p class="price">$100.00</p>
-                    <span>Scripted Feature</span>
-                </div>
-                <div class="pay-card">
-                    <h3>HALF HOUR</h3>
-                    <p class="price">$50.00</p>
-                    <span>Standard Block</span>
-                </div>
-            </div>
-            <p class="bonus-text">*Extra submissions = Faster Icon Status promotion.</p>
+    <div class="section">
+        <h3>Scouted by Filthy Seduction Productions LLC</h3>
+        <p>From Minneapolis to Philly, we build brands for the most dedicated performers in the industry. Whether you are looking to break into the market or scale your existing brand, we provide the safest and fastest route to success.</p>
+        
+        <div class="ad-space">
+            [ Premium Advertisement Placement - Market Other Brands Here ]
         </div>
-    </section>
+    </div>
 
-    <section class="tier-vault">
-        <div class="container">
-            <h2 class="section-title">MEMBERSHIP TIERS</h2>
-            <div class="tier-grid">
-                <div class="tier-card">
-                    <div class="tier-header">BASIC</div>
-                    <ul class="tier-list">
-                        <li>5 Productions in Year 1</li>
-                        <li>Standard Classification</li>
-                        <li>$100/hr Base Rate</li>
-                        <li>Secure Talent Profile</li>
-                    </ul>
-                    <div class="tier-price">FREE</div>
-                </div>
-                <div class="tier-card gold-border">
-                    <div class="tier-header">ELITE STAR</div>
-                    <ul class="tier-list">
-                        <li>Expedited Casting</li>
-                        <li>Branding Agent</li>
-                        <li>Live Remote Cues</li>
-                        <li>Priority Secure Shoots</li>
-                    </ul>
-                    <div class="tier-price">$99.99<span>/mo</span></div>
-                </div>
-                <div class="tier-card fire-border">
-                    <div class="tier-header">ICON STATUS</div>
-                    <ul class="tier-list">
-                        <li>Total Creative Control</li>
-                        <li>Custom Scripting</li>
-                        <li>24/7 Producer Access</li>
-                        <li>Top Portal Placement</li>
-                    </ul>
-                    <div class="tier-price">$199.99<span>/mo</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <hr style="border: 0; border-top: 1px solid #333;">
 
-    <section id="intake" class="casting-call">
-        <div class="container">
-            <div class="form-container">
-                <h2>INTAKE REQUIREMENTS</h2>
-                <p>Complete your profile. Our production staff will review within 24 hours.</p>
-                
-                <form class="fsp-form">
-                    <div class="row">
-                        <input type="text" placeholder="LEGAL FIRST NAME" required>
-                        <input type="text" placeholder="LEGAL LAST NAME" required>
-                    </div>
-                    <div class="row">
-                        <input type="text" placeholder="STAGE NAME (OPTIONAL)">
-                        <input type="email" placeholder="SECURE EMAIL" required>
-                    </div>
+    <div id="performer-login" class="section">
+        <h2>Performer Entry</h2>
+        <p>Exclusive access for our scouted talent to upload and manage content.</p>
+        <form style="display: inline-block; text-align: left; background: #1a1a1a; padding: 20px; border-radius: 8px;">
+            <label>Performer ID</label><br>
+            <input type="text" style="width: 100%; margin: 10px 0; padding: 8px;"><br>
+            <label>Access Key</label><br>
+            <input type="password" style="width: 100%; margin: 10px 0; padding: 8px;"><br>
+            <button type="button" class="btn btn-enter" style="width: 100%;">Login to Dashboard</button>
+        </form>
+    </div>
 
-                    <h3>MANDATORY VISUALS (5 PHOTOS)</h3>
-                    <div class="photo-inputs">
-                        <label>Face <input type="file" required></label>
-                        <label>Upper Front <input type="file" required></label>
-                        <label>Upper Back <input type="file" required></label>
-                        <label>Lower Front <input type="file" required></label>
-                        <label>Lower Back <input type="file" required></label>
-                    </div>
-
-                    <h3>THE INTRO REEL (MAX 5 MIN)</h3>
-                    <p class="form-tip">State your name, origin, and why you're FSP material.</p>
-                    <input type="file" class="video-input" required>
-
-                    <button type="submit" class="final-btn">INITIALIZE PROFILE</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="fsp-footer">
-        <img src="VEXILLIALSDP_FSP.png" alt="FSP Logo" class="footer-logo">
-        <p>REGISTERED SECURE PRODUCTION | &copy; 2026 FILTHY SEDUCTION PRODUCTIONS</p>
+    <footer>
+        <p>&copy; 2026 Filthy Seduction Productions LLC. Minneapolis, MN | Philadelphia, PA.</p>
+        <p>Visit <a href="http://www.filthyseductionproductions.com" style="color: var(--primary-gold);">Filthy Seduction Productions</a> for scouting and corporate info.</p>
     </footer>
 
+    <script>
+        function enterSite() {
+            document.getElementById('age-gate').style.display = 'none';
+        }
+
+        function exitSite() {
+            window.location.href = "https://apexvesto.com";
+        }
+    </script>
 </body>
 </html>
